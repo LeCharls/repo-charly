@@ -1,29 +1,29 @@
 function likes(names) {
-    let notification = ""
-    if (names.length > 1){
-        for (i = 0; i < names.length; i++){
-            if (names.length === 2){
-                notification += `${names[i]} and ${names[i + 1]} like this`
-            }
-            if (names.length === 3) {
-                notification += `${names[i]}, ${names[i+1]} and ${names[i+2]} like this`   
-            }
-            if (names.length >= 4){
-                notification += `${names[i]}, ${names[i+1]} and ${names.length - 2} others like this` 
-            }
 
-        return notification
-        }
-    }
-    else if (names.length == 1) {
-        return `${names[0]} likes this`
-    }
-    else if (names.length == 0) {
-        return "no one likes this"
+    switch (names.length) {
+        case 0:
+            return `no one likes this`;
+            
+        case 1:
+            return `${names[0]} likes this`;
+
+        case 2:
+            return `${names[0]} and ${names[1]} like this`;
+        
+        case 3:
+            return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+
+        default:
+            return `${names[0]}, ${names[1]} and ${names.length - 2} others like this` ;
+
     }
 }
-dos = ['Jacob', 'Alex']
-tres = ['Max', 'John', 'Mark']
-cuatro = ['Alex', 'Jacob', 'Mark', 'Max']
-console.log(likes(cuatro))
+
+let cero = []
+let uno = ['Alex']
+let dos = ['Jacob', 'Alex']
+let tres = ['Max', 'John', 'Mark']
+let cuatro = ['Alex', 'Jacob', 'Mark', 'Max']
+let seis = ['Alex', 'Jacob', 'Mark', 'Max', 'Charly', 'Julian']
+console.log(likes(seis))
 
